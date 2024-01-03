@@ -1,0 +1,32 @@
+import React from 'react'
+import Logo from './Logo';
+import Link from 'next/link';
+
+const Navbar = () => {
+    // create a navigation array
+    const nav = [
+      { title: "Home", href: "/" },
+      { title: "Features", href: "/features" },
+      { title: "About", href: "/about" },
+      { title: "Studio", href: "/studio" },
+    ];
+    
+  return (
+    <div className='w-full bg-yellow-50/70 h-20 shadow-md'>
+    <div className='max-w-screen-xl mx-auto flex items-center justify-between px-4 lg:px-0 h-full'>
+      <Logo title="Coding Crossroads" className="text-blue-500" />
+      <div className='hidden md:inline-flex items-center gap-7 text-blue-700 hover:text-black duration-200'>
+        {nav.map((item)=> (
+          <Link key={item?.title} href={item?.href} className='text-sm uppercase font-semibold relative group overflow-hidden'>
+            {item?.title}
+            <span className='w-full h-[1px] bg-blue-700 absolute inline-block left-0 bottom-0 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-200'></span>
+          </Link>
+        ))}
+      </div>
+    </div>
+
+    </div>
+  )
+}
+
+export default Navbar
