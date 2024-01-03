@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from './Logo';
 import Link from 'next/link';
+import {FiMenu} from 'react-icons/fi';
 
 const Navbar = () => {
     // create a navigation array
@@ -23,6 +24,9 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
+      <div className='md:hidden'>
+        <FiMenu className='text-2xl'/>
+        </div>
     </div>
 
     </div>
