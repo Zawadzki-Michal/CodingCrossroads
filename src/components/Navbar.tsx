@@ -25,7 +25,7 @@ const Navbar = () => {
         ))}
       </div>
       <div className='md:hidden'>
-        <FiMenu className='text-2xl'/>
+        <FiMenu className='text-3xl text-white'/>
         </div>
     </div>
 
