@@ -6,16 +6,17 @@ import BlogContent from '@/components/BlogContent'
 const query = groq`*[_type == "post"]{
   ...,
   author->,
-  categories[]->
+  categories[]->,
 } | order(_createdAt desc)`
 
 export default async function Home() {
   const posts = await client.fetch(query)
 
   return (
-<main>
+    <main>
   <Hero />
+    
   <BlogContent posts={posts} />
-</main>
+    </main>
   )
 }
