@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import roads from '../app/images/roads.jpg'
+import roads from '../images/roads.jpg'
 
 
 
