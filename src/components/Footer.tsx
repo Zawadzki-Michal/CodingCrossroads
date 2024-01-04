@@ -24,7 +24,7 @@ const Footer = () => {
   <Link href="www.linkedin.com/in/michal-zawadzki-12329394" target='blank'>
     <BsLinkedin className='text-4xl hover:text-blue-400 duration-200' />
   </Link>
-  <Link href="https://portfolio-llmv86xho-michals-projects-925a6fef.vercel.app/" target='blank'>
+  <Link href="https://portfolio-sage-two-22.vercel.app/" target='blank'>
     <BsWordpress className='text-4xl hover:text-blue-400 duration-200' />
   </Link>
   </div>
