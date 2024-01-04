@@ -3,6 +3,8 @@ import { client } from '../../../sanity/lib/client'
 import { groq } from 'next-sanity'
 import BlogContent from '@/components/BlogContent'
 
+export const revalidate = 30;
+
 const query = groq`*[_type == "post"]{
   ...,
   author->,
