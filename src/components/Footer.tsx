@@ -7,7 +7,7 @@ import {BsYoutube, BsFacebook, BsInstagram, BsGithub, BsLinkedin, BsWordpress} f
 const Footer = () => {
   return (
   <Container className='lg:p-10 p-5 md:px-20 bg-[#111111]/95 text-gray-100 flex items-center justify-between'>
-  <Link href={"/"}><p className='hidden md:inline  md:text-xl'>Contact Me</p></Link>
+  <Link href={"/contact"}><p className='hidden md:inline  md:text-xl'>Contact Me</p></Link>
   <div className='text-gray-100 md:inline-flex flex items-center mx-auto lg:gap-7 gap-5'>
   <Link href="https://www.youtube.com/@CodingCrossroads" target='blank'>
     <BsYoutube className='text-2xl md:text-4xl hover:text-red-500 duration-200' />

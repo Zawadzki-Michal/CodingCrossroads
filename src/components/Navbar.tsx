@@ -20,6 +20,7 @@ const Navbar = () => {
     { title: "Portfolio", href: "https://portfolio-sage-two-22.vercel.app/" },
     { title: "About", href: "/about" },
     { title: "Studio", href: "/studio" },
+    { title: "Contact", href: "/contact"}
   ];
 
   return (
