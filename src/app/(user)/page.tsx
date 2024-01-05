@@ -17,7 +17,6 @@ export default async function Home() {
   return (
     <main>
   <Hero />
-    
   <BlogContent posts={posts} />
     </main>
   )

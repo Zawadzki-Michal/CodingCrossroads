@@ -47,7 +47,7 @@ const SlugPage = async ({ params: { slug } }: Props) => {
         <div className="w-1/3 hidden md:inline-flex flex-col items-center gap-5 px-4">
           <Image src={urlFor(post?.author?.image).url()} width={200} height={200} alt="author" className="rounded-full object-cover w-32 h-32" />
           <p className="text-3xl text-purple-600 font-semibold">{post?.author?.name}</p>
-          <p className="text-xl text-gray-500 text-center tracking-wide">{post?.author?.description}</p>
+          <p className="text-xl text-gray-900 text-center tracking-wide">{post?.author?.description}</p>
           
           <div className="flex items-center gap-4">
           <Link href="https://github.com/Zawadzki-Michal" target='blank'>
