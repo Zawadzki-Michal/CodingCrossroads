@@ -9,6 +9,8 @@ export default async function POST(request: NextRequest) {
     const body = await request.json();
     console.log("body", body);
     const { email, name, message, subject } = body;
+
+    // Add a 'text' property to the resend.emails.send options
     const data = await resend.emails.send({
       from: 'info@coding-crossroads.co.uk',
       to: email,
@@ -21,9 +23,10 @@ export default async function POST(request: NextRequest) {
     if ('status' in data && data.status === 'success') {
       return NextResponse.json({ message: 'Email sent successfully' });
     }
+
     return NextResponse.json(data);
   } catch (error) {
-    console.log(error);
+    console.error('Error:', error);
     return NextResponse.json({ message: 'Something went wrong' });
   }
 }
