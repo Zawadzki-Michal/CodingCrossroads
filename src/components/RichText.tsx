@@ -32,6 +32,9 @@ export const RichText={
     h3: ({children}:any) => ( <h3 className="text-2xl font-bold py-5">{children}</h3>),
     h4: ({children}:any) => ( <h4 className="text-xl font-bold py-5">{children}</h4>),
     blockquote: ({children}:any) => ( <blockquote className="border-l-4 border-gray-300 pl-4 py-5 my-5">{children}</blockquote>),
+    p: ({ children }: any) => (
+      <p className="text-xl mb-6">{children}</p>
+    ),
 
   },
   marks: {
