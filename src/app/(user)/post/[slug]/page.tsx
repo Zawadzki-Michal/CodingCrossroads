@@ -66,7 +66,7 @@ const SlugPage = async ({ params: { slug } }: Props) => {
       </div>
       <h1 className="lg:text-5xl text-3xl font-bold text-center lg:m-10 m-4 text-gray-700">{post?.title}</h1>
       <span className="flex w-11/12 lg:w-full  mx-auto mb-6    border-b-2  border-gray-700"></span>
-      <div className="text-gray-700 font-medium leading-10  text-lg  lg:text-2xl mx-4 flex flex-col gap-5">
+      <div className="text-gray-700  font-normal lg:leading-10 leading-7  text-lg  lg:text-2xl mx-4 flex flex-col gap-5">
         <PortableText value={post?.body} components={RichText} />
       </div>
     </Container>

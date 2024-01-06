@@ -24,7 +24,7 @@ const BlogContent = ({ posts }: Props) => {
                 alt="blog post"
                 width={400}
                 height={400}
-                className="w-full max-h-[400px] object-contain hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
+                className="w-full max-h-[400px] object-contain hover:scale-150 duration-700 rounded-tl-md rounded-bl-md"
               />
               <div className="absolute top-0 left-0 bg-black/20 w-full h-full hidden group-hover:inline-flex rounded-tl-md rounded-bl-md">
                 <div className="relative bottom-0 left-0 w-full bg-opacity-50 bg-black backdrop-blur-xl rounded-md drop-shadow-lg text-white p-5 justify-center">
