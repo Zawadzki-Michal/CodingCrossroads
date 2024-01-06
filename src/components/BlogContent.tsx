@@ -10,7 +10,7 @@ interface Props {
 
 const BlogContent = ({ posts }: Props) => {
   return (
-    <Container className="bg-black/25 lg:py-20 py-5 lg:px-24 px-4 grid lg:grid-cols-2 grid-cols-1 gap-20">
+    <Container className="bg-black/25 lg:py-20 py-5 lg:px-24 px-2 grid lg:grid-cols-2 grid-cols-1 gap-20">
       {posts.map((post) => (
         <Link key={post._id} href={{
           pathname: `/post/${post?.slug?.current}`,
@@ -24,10 +24,10 @@ const BlogContent = ({ posts }: Props) => {
                 alt="blog post"
                 width={400}
                 height={400}
-                className="w-full max-h-[300px] object-contain hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
+                className="w-full max-h-[400px] object-contain hover:scale-105 duration-500 rounded-tl-md rounded-bl-md"
               />
               <div className="absolute top-0 left-0 bg-black/20 w-full h-full hidden group-hover:inline-flex rounded-tl-md rounded-bl-md">
-                <div className="relative bottom-0 left-0 w-full bg-opacity-10 bg-black backdrop-blur-xl rounded-md drop-shadow-lg text-white p-5 justify-center">
+                <div className="relative bottom-0 left-0 w-full bg-opacity-50 bg-black backdrop-blur-xl rounded-md drop-shadow-lg text-white p-5 justify-center">
                   <p className="text-2xl font-bold">Read More</p>
                 </div>
               </div>
@@ -41,11 +41,14 @@ const BlogContent = ({ posts }: Props) => {
                   </p>
                 ))}
               </div>
-              <h2 className="text-2xl font-semibold hover:text-red-700 duration-200 cursor-pointer">{post?.title}</h2>
-              <p className="text-gray-600 ">{post?.description}</p>
+              <h2 className="lg:text-2xl text-xl font-semibold text-gray-700 hover:text-red-700 duration-200 cursor-pointer lg:mx-3">{post?.title}</h2>
+              <p className="text-gray-600 lg:text-lg lg:mx-3">{post?.description}</p>
               </div>
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold text-gray-500">{new Date(post?._createdAt).toLocaleDateString
+              <div className="w-full text-center p-4">
+                <h4 className="text-2xl font-bold underline text-gray-500">Click to read post</h4>
+              </div>
+              <div className="flex items-center justify-between lg:m-3 mt-5">
+                <p className="text-md font-semibold text-gray-500">{new Date(post?._createdAt).toLocaleDateString
                 ("en-UK", {
                   day: "numeric",
                   month: "long",
