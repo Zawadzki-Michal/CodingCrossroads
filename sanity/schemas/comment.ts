@@ -11,6 +11,12 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      title: 'Approved',
+      name: 'approved',
+      type: 'boolean',
+      description: "Comments won't show on the site without approval",
+    }),
+    defineField({
       name: 'email',
       title: 'Email',
       type: 'string',
