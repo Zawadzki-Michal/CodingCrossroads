@@ -41,7 +41,7 @@ const BlogContent = ({ posts }: Props) => {
               </div>
 
               {/* // Section for Date, Categories, Author */}
-              <div className="flex justify-between flex-col pt-1 pb-2 md:pb-0">
+              <div className="flex justify-between flex-col pt-1 lg:pb-0 pb-3">
                 <div>
                   <h4 className="text-xl align-text-bottom text-center font-bold underline text-gray-500 hover:text-gray-600 mb-6">
                     Click to read post
