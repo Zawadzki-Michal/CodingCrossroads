@@ -1,3 +1,4 @@
+
 import { groq } from "next-sanity";
 import { client } from "../../../../../sanity/lib/client";
 import { Post } from "../../../../../types";
@@ -8,6 +9,8 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin, FaWordpress } from 'react-icons/fa'
 import { PortableText } from "@portabletext/react";
 import { RichText } from "@/components/RichText";
+import CommentBox from "@/components/CommentSection";
+import { Comment } from "../../../../../types";
 
 
 interface Props {
@@ -28,11 +31,28 @@ export const generateStaticParams = async () => {
   }));
 };
 
+
+const CommentDisplay = ({ comment }: { comment: Comment }) => (
+  <div className="comment">
+    <p><strong>{comment.name}</strong> ({new Date(comment._createdAt).toLocaleDateString()})</p>
+    <p>{comment.comment}</p>
+  </div>
+);
+
+
 const SlugPage = async ({ params: { slug } }: Props) => {
   const query = groq`*[_type == "post" && slug.current == $slug][0]{
+    _id,
     ...,
     body,
     author->,
+    'comments': *[_type == "comment" && post._ref == ^._id && approved == true]{
+      _id,
+      name,
+      email,
+      comment,
+      _createdAt
+    }
   }`;
 
   const post: Post = await client.fetch(query, { slug });
@@ -69,6 +89,8 @@ const SlugPage = async ({ params: { slug } }: Props) => {
       <div className="text-gray-700  font-normal lg:leading-10 leading-7  text-lg  lg:text-2xl mx-4 flex flex-col gap-5">
         <PortableText value={post?.body} components={RichText} />
       </div>
+     
+      <CommentBox postId={post?._id} />
     </Container>
   );
 };

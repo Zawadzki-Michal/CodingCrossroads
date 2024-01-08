@@ -8,9 +8,11 @@ export const client = createClient({
   dataset,
   projectId,
   useCdn,
+  token: process.env.NEXT_PUBLIC_SANITY_USER_ADDER_TOKEN, // Add your token here
 })
 
 const builder = ImageUrlBuilder(client)
 
-export const urlFor = (source:any) =>
-{ return builder.image(source) };
+export const urlFor = (source: any) => {
+  return builder.image(source);
+};

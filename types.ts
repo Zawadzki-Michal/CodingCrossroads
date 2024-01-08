@@ -14,6 +14,7 @@ export interface Post extends Base {
   slug: Slug;
   title: string;
   description: string;
+  comments: Comment[];
 }
 
 interface Author extends Base {
@@ -57,4 +58,16 @@ interface Category {
   _id: string;
   description: string;
   title: string;
+}
+
+export interface CommentFormProps {
+  postId: string; // Assuming postId is a string
+}
+
+export interface Comment {
+  _id: string;
+  name: string;
+  email: string; // include this only if you intend to display or use it
+  comment: string;
+  _createdAt: string;
 }
