@@ -27,56 +27,61 @@ const BlogContent = ({ posts }: Props) => {
                 alt="blog post"
                 width={400}
                 height={400}
-                className="w-full max-h-[400px] object-contain hover:scale-150 duration-700 rounded-tl-md rounded-bl-md"
+                className="w-full max-h-[400px] object-contain hover:scale-150 duration-700 rounded-tl-md rounded-bl-md pb-3"
               />
             </div>
 
             {/* // Section for Title, Description */}
-            <div className="flex flex-col min-h-96 justify-between px-3 lg:p-6">
+            <div className="flex flex-col min-h-[350px] md:min-h-96 justify-between px-3 lg:p-6">
               <div className="flex flex-col">
-                <h2 className="lg:text-3xl text-xl font-semibold text-gray-700 hover:text-red-700 duration-200 cursor-pointer mb-4">
+                <h2 className="lg:text-3xl text-xl font-semibold text-gray-600 hover:text-gray-800 duration-200 cursor-pointer mb-4">
                   {post?.title}
                 </h2>
                 <p className="text-gray-600 lg:text-lg">{post?.description}</p>
               </div>
-              <h4 className="text-xl text-center font-bold pt-5 underline text-gray-500 hover:text-gray-600">
-                Click to read post
-              </h4>
+
               {/* // Section for Date, Categories, Author */}
-              <div className="flex justify-between pt-10">
-                {/* // Container for Date and Categories */}
+              <div className="flex justify-between flex-col pt-1 pb-2 md:pb-0">
                 <div>
-                  <p className="text-md font-semibold text-gray-500">
-                    {new Date(post?._createdAt).toLocaleDateString("en-UK", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })}
-                  </p>
-
-                  {post?.categories?.map((item) => (
-                    <p
-                      key={item?._id}
-                      className="text-xs text-blue-500 font-semibold uppercase"
-                    >
-                      {item?.title}
-                    </p>
-                  ))}
+                  <h4 className="text-xl align-text-bottom text-center font-bold underline text-gray-500 hover:text-gray-600 mb-6">
+                    Click to read post
+                  </h4>
                 </div>
+                {/* // Container for Date and Categories */}
+                <div className="flex flex-row justify-between">
+                  <span>
+                    <p className="text-md font-semibold text-gray-500">
+                      {new Date(post?._createdAt).toLocaleDateString("en-UK", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
+                    </p>
 
-                {/* // Container for Author */}
-                <span className="flex flex-row items-center gap-3">
-                  <Image
-                    src={urlFor(post?.author?.image).url()}
-                    alt="author"
-                    width={150}
-                    height={150}
-                    className="rounded-full object-cover w-10 h-10"
-                  />
-                  <p className="text-sm font-semibold text-gray-500">
-                    {post?.author?.name}
-                  </p>
-                </span>
+                    {post?.categories?.map((item) => (
+                      <p
+                        key={item?._id}
+                        className="text-xs text-blue-500 font-semibold uppercase"
+                      >
+                        {item?.title}
+                      </p>
+                    ))}
+                  </span>
+
+                  {/* // Container for Author */}
+                  <span className="flex flex-row items-center gap-3">
+                    <Image
+                      src={urlFor(post?.author?.image).url()}
+                      alt="author"
+                      width={150}
+                      height={150}
+                      className="rounded-full object-cover w-10 h-10"
+                    />
+                    <p className="text-sm font-semibold text-gray-500">
+                      {post?.author?.name}
+                    </p>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
