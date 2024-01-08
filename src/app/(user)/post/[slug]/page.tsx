@@ -59,13 +59,13 @@ const SlugPage = async ({ params: { slug } }: Props) => {
   console.log(post);
 
   return (
-    <Container className="mb-10 lg:w-4/5 lg:mx-auto lg:m-10">
+    <Container className="mb-10 lg:w-8/12 lg:mx-auto lg:m-10">
       
       <div className="flex items-center justify-evenly mb-10">
         <div className="h-full md:w-1/2">
           <Image src={urlFor(post?.mainImage).url()} width={400} height={400} alt="main image" className="object-cover w-full max-h-[460px]" />
         </div>
-        <div className="w-1/3 hidden md:inline-flex flex-col items-center gap-5 px-4">
+        <div className="w-5/12 hidden md:inline-flex flex-col items-center gap-6 px-4">
           <Image src={urlFor(post?.author?.image).url()} width={200} height={200} alt="author" className="rounded-full object-cover w-32 h-32" />
           <p className="text-3xl text-purple-600 font-semibold">{post?.author?.name}</p>
           <p className="text-xl text-gray-700 text-center tracking-wide">{post?.author?.description}</p>
@@ -85,12 +85,18 @@ const SlugPage = async ({ params: { slug } }: Props) => {
         
       </div>
       <h1 className="lg:text-5xl text-3xl font-bold text-center lg:m-10 m-4 text-gray-700">{post?.title}</h1>
-      <span className="flex w-11/12 lg:w-full  mx-auto mb-6    border-b-2  border-gray-700"></span>
+      <span className="flex mx-3 mb-6    border-b  border-gray-700"></span>
       <div className="text-gray-700  font-normal lg:leading-10 leading-7  text-lg  lg:text-2xl mx-4 flex flex-col gap-5">
         <PortableText value={post?.body} components={RichText} />
       </div>
-     
+      <div className="min-h-24">
+      <h1 className="lg:text-4xl text-3xl font-bold my-5 mx-3 text-gray-700">Comments</h1>
+      <span className="flex mx-3 mb-6    border-b  border-gray-700"></span>
+      </div>
+      <div className="text-gray-700 lg:leading-10 leading-7  text-lg  lg:text-xl flex flex-col gap-5">
       <CommentBox postId={post?._id} />
+      </div>
+      
     </Container>
   );
 };

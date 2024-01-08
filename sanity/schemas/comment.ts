@@ -17,11 +17,6 @@ export default defineType({
       description: "Comments won't show on the site without approval",
     }),
     defineField({
-      name: 'email',
-      title: 'Email',
-      type: 'string',
-    }),
-    defineField({
       name: 'comment',
       title: 'Comment',
       type: 'text',
