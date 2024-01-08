@@ -17,7 +17,8 @@ const BlogContent = ({ posts }: Props) => {
           query: { slug: post?.slug?.current },
           }}>
             
-          <div className="flex flex-col md:flex-col bg-stone-100 rounded-md rounded-tr-md shadow-[0_3px_6px_rgb(0,0,0,0.3)] hover:shadow-lg duration-200 lg:min-h-72">
+          <div className="flex flex-col md:flex-col bg-stone-100 rounded-md rounded-tr-md shadow-[0_3px_6px_rgb(0,0,0,0.3)] hover:shadow-lg duration-200 lg:min-h-[calc(100vh-160px)]">
+          <div>
             <div className="w-full md:w-5/10 overflow-hidden rounded-tl-md rounded-bl-md relative">
               <Image
                 src={urlFor(post?.mainImage).url()}
@@ -27,36 +28,38 @@ const BlogContent = ({ posts }: Props) => {
                 className="w-full max-h-[400px] object-contain hover:scale-150 duration-700 rounded-tl-md rounded-bl-md"
               />
               <div className="absolute top-0 left-0 bg-black/20 w-full h-full hidden group-hover:inline-flex rounded-tl-md rounded-bl-md">
-                <div className="relative bottom-0 left-0 w-full bg-opacity-50 bg-black backdrop-blur-xl rounded-md drop-shadow-lg text-white p-5 justify-center">
-                  <p className="text-2xl font-bold">Read More</p>
-                </div>
+                
               </div>
             </div>
             <div className="w-full md:w-5/10 flex flex-col justify-between py-5 px-3 lg:min-h-72">
               <div className="flex flex-col gap-5">
-              <div className="flex items-center gap-2">
-                {post?.categories?.map((item) => (
-                  <p key={item?._id} className="text-xs text-blue-500 font-semibold uppercase">
-                    {item?.title}
-                  </p>
-                ))}
-              </div>
+              
               <h2 className="lg:text-2xl text-xl font-semibold text-gray-700 hover:text-red-700 duration-200 cursor-pointer lg:mx-3">{post?.title}</h2>
               <p className="text-gray-600 lg:text-lg lg:mx-3">{post?.description}</p>
               </div>
-              <div className="w-full text-center p-4">
-                <h4 className="text-2xl font-bold underline text-gray-500">Click to read post</h4>
               </div>
-              <div className="flex items-center justify-between lg:m-3 mt-5">
+              <div className="mb-4">
+              <div className="w-full text-center p-4">
+                <h4 className="text-2xl font-bold underline text-gray-500 hover:text-gray-600">Click to read post</h4>
+              </div>
+              <div className="flex items-center justify-between lg:ml-6 ml-3 mt-5">
                 <p className="text-md font-semibold text-gray-500">{new Date(post?._createdAt).toLocaleDateString
                 ("en-UK", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
-                })}</p>
+                })}
                 <div className="flex items-center gap-2">
+                {post?.categories?.map((item) => (
+                  <p key={item?._id} className="text-xs text-blue-500 font-semibold uppercase">
+                    {item?.title}
+                  </p>
+                ))}
+              </div></p>
+                <div className="flex items-center gap-2 lg:mr-6 mr-3">
                   <Image src={urlFor(post?.author?.image).url()} alt="author" width={150} height={150} className="rounded-full object-cover w-10 h-10" />
                   <p className="text-sm font-semibold text-gray-500">{post?.author?.name}</p>
+                </div>
                 </div>
               </div>
             </div>
