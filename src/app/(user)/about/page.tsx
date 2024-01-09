@@ -1,12 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import about from "../../../images/aboutme2.jpeg";
-import DropDown from "@/components/DropDown";
 
 const About = () => {
   return (
     <div className="lg:w-2/3 lg:min-h-[calc(100vh-180px)] mx-auto">
-      <DropDown />
       <h1 className="text-7xl lg:text-[100px] font-bold text-center lg:my-10 my-4 text-gray-700">
         About Me
       </h1>

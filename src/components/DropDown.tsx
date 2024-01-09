@@ -33,21 +33,21 @@ export default function DropDown() {
     <div className="relative group">
       <button
         onClick={toggleDropdown}
-        className="w-full flex items-center justify-between font-bold text-lg mr-4 rounded-lg uppercase border-4 border-transparent active:border-white duration-300 active:text-white"
+        className="w-full flex items-center justify-between lg:font-bold lg:text-lg text-2xl mr-4 rounded-lg lg:uppercase border-4 border-transparent lg:active:border-white  lg:active:text-white duration-300"
       >
         Portfolio{"  "}
         {isOpen ? <SlArrowUp className="" /> : <SlArrowDown className="" />}
       </button>
       <span
-        className={`w-full h-[2px] bg-gray-100 absolute inline-block left-0 bottom-0 group-hover:translate-x-0 transition-transform duration-200 ${
+        className={`w-full h-[2px] bg-gray-100 absolute inline-block left-0 bottom-0 lg:group-hover:translate-x-0 lg:transition-transform duration-200 ${
           isOpen ? "block" : "hidden"
         }`}
       ></span>
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-full bg-white rounded-lg shadow-lg">
+        <div className=" top-full left-0 mt-2 w-full bg-transparent rounded-lg shadow-lg">
           <ul className="flex flex-col items-center justify-center w-full">
             {list.map((item) => (
-              <li key={item.id} className="py-4">
+              <li key={item.id} className="py-4 text-gray-100">
                 <Link href={item.href} onClick={toggleDropdown}>
                   {item.title}
                 </Link>

@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
           // Project card container
           <div
             key={index}
-            className="bg-gray-100 min-h-[650px] max-w-[500px] rounded-xl shadow-lg hover:scale-105 duration-500"
+            className="bg-gray-100 min-h-[700px] max-w-[500px] rounded-xl shadow-lg hover:scale-105 duration-500"
           >
             {/* // Link wrapping the project image */}
             <Link href={project.route} passHref>

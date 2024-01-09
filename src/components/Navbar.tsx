@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 import Logo from "./Logo";
 import Link from "next/link";
 import { FiMenu } from "react-icons/fi";
@@ -16,10 +17,14 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  const handleDropdownClick = (e: any) => {
+    e.stopPropagation();
+    // You can add more logic here if needed, but do not define state or other functions inside
+  };
   const nav = [
     { title: "About Me", href: "/about" },
     { title: "Contact", href: "/contact" },
-    { title: "Studio", href: "/studio" }, // Use a placeholder href
+    { title: "Studio", href: "/studio" },
     { title: "Dropdown", href: "#" },
   ];
 
@@ -53,17 +58,27 @@ const Navbar = () => {
       </div>
       {isMenuOpen && (
         <div className="flex items-start justify-end h-screen w-screen pr-4 pt-2 ">
-          <div className="w-4/5 h-1/2 bg-[#111111]/95 rounded-xl flex flex-col gap-4 justify-center">
-            {nav.map((item) => (
-              <Link key={item?.title} href={item?.href}>
+          <div className=" bg-[#111111]/95 rounded-xl flex flex-col gap-4 justify-center h-auto p-10">
+            {nav.map((item) =>
+              item.href === "#" ? (
                 <div
-                  onClick={closeMenu}
-                  className=" flex justify-center items-center text-center text-2xl  text-gray-100 hover:text-gray-600 p-3 cursor-pointer"
+                  key={item.title}
+                  onClick={handleDropdownClick}
+                  className="flex justify-center items-center text-center text-2xl text-gray-100 hover:text-gray-600 p-3 cursor-pointer"
                 >
-                  {item?.title}
+                  <DropDown />
                 </div>
-              </Link>
-            ))}
+              ) : (
+                <Link key={item.title} href={item.href}>
+                  <div
+                    onClick={closeMenu}
+                    className="flex justify-center items-center text-center text-2xl text-gray-100 p-3 cursor-pointer"
+                  >
+                    {item.title}
+                  </div>
+                </Link>
+              )
+            )}
           </div>
         </div>
       )}
