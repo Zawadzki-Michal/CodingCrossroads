@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
                 height={500}
                 width={500}
                 alt={project.title}
-                className="h-[250px] lg:object-fill object-cover rounded-tl-xl rounded-tr-xl p-1"
+                className="h-[250px] lg:object-fill object-cover rounded-tl-xl rounded-tr-xl lg:p-1"
               />
             </Link>
 
