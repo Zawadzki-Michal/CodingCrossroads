@@ -19,7 +19,7 @@ const About = () => {
           About Me
         </h1>
         <p className="lg:text-2xl text-lg p-3 text-gray-700 lg:p-12 leading-relaxed">
-          Hello, I'm Michal Zawadzki, a dynamic full-stack web developer fresh
+          {`Hello, I'm Michal Zawadzki, a dynamic full-stack web developer fresh
           out of a 16-week bootcamp. While I've been immersed in coding for a
           while, this recent experience has honed my skills and instilled a
           proactive learning approach. I firmly believe in the power of
@@ -32,7 +32,7 @@ const About = () => {
           blend of experience and fresh enthusiasm, I'm ready to contribute to
           your team's success. If you're looking for a dedicated developer with
           a passion for growth, let's connect and explore how I can bring value
-          to your projects.
+          to your projects.`}
         </p>
       </div>
     </div>
