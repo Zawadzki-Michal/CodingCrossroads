@@ -4,35 +4,37 @@ import about from "../../../images/aboutme2.jpeg";
 
 const About = () => {
   return (
-    <div className="w-full lg:h-[calc(100vh-180px)] flex lg:flex-row flex-col lg:justify-center">
-      <div className="lg:w-1/2 h-full flex justify-center items-center ">
-        <Image
-          src={about}
-          height={800}
-          width={800}
-          alt="lorry"
-          className="lg:w-[700px] lg:h-[700px] object-cover lg:rounded-xl shadow-2xl justify-center align-middle items-center"
-        />
-      </div>
-      <div className="lg:w-1/2 lg:h-full flex justify-center items-center flex-col gap-4">
-        <h1 className="text-6xl font-bold text-center lg:mt-10 mt-4 text-gray-700">
-          About Me
-        </h1>
-        <p className="lg:text-2xl text-lg p-3 text-gray-700 lg:p-12 leading-relaxed">
-          {`Hello, I'm Michal Zawadzki, a dynamic full-stack web developer fresh
-          out of a 16-week bootcamp. While I've been immersed in coding for a
-          while, this recent experience has honed my skills and instilled a
-          proactive learning approach. I firmly believe in the power of
-          commitment and habits to turn goals into reality. In my recent role as
-          a Junior Full Stack Developer at the School of Code in Birmingham,
-          I've excelled in breaking down complex challenges and contributing to
-          product development using technologies like Node.js, Express, React,
-          and PostgreSQL. Understanding that hiring a junior is an investment
-          for any company, I am confident that I'll be a great choice. With a
-          blend of experience and fresh enthusiasm, I'm ready to contribute to
-          your team's success. If you're looking for a dedicated developer with
-          a passion for growth, let's connect and explore how I can bring value
-          to your projects.`}
+    <div className="lg:w-2/3 lg:min-h-[calc(100vh-180px)] mx-auto">
+      <h1 className="text-7xl lg:text-[100px] font-bold text-center lg:my-10 my-4 text-gray-700">
+        About Me
+      </h1>
+      <div className="lg:px-10 px-4">
+        <div className="lg:float-left lg:mr-8 mb-4">
+          <Image
+            src={about}
+            height={600}
+            width={600}
+            alt="lorry"
+            className="object-cover lg:rounded-xl lg:shadow-2xl"
+          />
+        </div>
+
+        <p className="lg:text-2xl text-xl text-gray-600 lg:leading-relaxed pb-10">
+          {`
+
+Hello! I’m Michal, a 35-year-old web development enthusiast living in Derby, and a proud father to Martyna and Jacob. My journey from a lorry driver and bathroom renovation business owner to an aspiring junior web developer is anything but ordinary.
+
+My passion for technology sparked in my teenage years, starting from programming bots for games to modifying custom ROMs during the early Android era. Now, it’s all about full-stack web development.
+
+Joining the School of Code’s intensive 16-week bootcamp was a pivotal moment in my life. It wasn’t just any bootcamp; it was a competitive and unique experience that I earned after persistently applying since summer 2019, finally beating nearly 3,000 applicants. This persistence is a core part of who I am – I’m not one to give up. I chase my dreams until they become reality, and software engineering has been a lifelong dream of mine.
+
+The bootcamp didn’t just enhance my technical skills; it transformed me personally. I’ve become more open, confident in public speaking, and comfortable engaging with clients and strangers alike. I’m always eager to learn, unafraid to admit what I don’t know, and ready to embrace new challenges.
+
+My blog, ‘Coding Crossroads’, is a testament to this journey. It’s where I share the highs and lows of transitioning from a lorry driver to a junior web developer. Writing about my experiences, from the intense learning at the School of Code to everyday life challenges, has become a newfound passion.
+
+Teamwork is another aspect I thoroughly enjoy. Participating in daily stand-ups, sprint planning, retrospectives, and supporting my teammates is something I find fulfilling.
+
+Outside of coding, I’m a tech enthusiast at heart. I love keeping up with the latest in technology, listening to podcasts, indulging in handheld gaming, and exploring photography. Video editing is my latest venture. And a non-tech dream? Someday, I’ll ride a Harley Davidson, revisiting my love for biking that I paused for family responsibilities.`}
         </p>
       </div>
     </div>
