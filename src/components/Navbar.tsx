@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Logo from "./Logo";
 import Link from "next/link";
 import { FiMenu } from "react-icons/fi";
+import DropDown from "@/components/DropDown";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,11 +17,10 @@ const Navbar = () => {
   };
 
   const nav = [
-    { title: "Home", href: "/" },
-    { title: "Portfolio", href: "https://portfolio-sage-two-22.vercel.app/" },
-    { title: "About", href: "/about" },
-    { title: "Studio", href: "/studio" },
+    { title: "About Me", href: "/about" },
     { title: "Contact", href: "/contact" },
+    { title: "Studio", href: "/studio" }, // Use a placeholder href
+    { title: "Dropdown", href: "#" },
   ];
 
   return (
@@ -30,14 +30,18 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:inline-flex items-center gap-7 text-gray-100 hover:text-gray-400 duration-200">
-          {nav.map((item) => (
-            <Link key={item?.title} href={item?.href}>
-              <div className="text-lg uppercase font-semibold relative group overflow-hidden cursor-pointer">
-                {item?.title}
-                <span className="w-full h-[2px] bg-gray-100 absolute inline-block left-0 bottom-0 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-200"></span>
-              </div>
-            </Link>
-          ))}
+          {nav.map((item) =>
+            item.href === "#" ? (
+              <DropDown key={item.title} />
+            ) : (
+              <Link key={item.title} href={item.href}>
+                <div className="text-lg uppercase font-semibold relative group overflow-hidden cursor-pointer">
+                  {item.title}
+                  <span className="w-full h-[2px] bg-gray-100 absolute inline-block left-0 bottom-0 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-200"></span>
+                </div>
+              </Link>
+            )
+          )}
         </div>
 
         <div className="md:hidden relative">

@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 type Base = {
   _createdAt: string;
   _id: string;
@@ -15,6 +17,15 @@ export interface Post extends Base {
   title: string;
   description: string;
   comments: Comment[];
+}
+
+export interface Project {
+  title: string;
+  route: string;
+  description: string;
+  imageSrc: StaticImageData;
+  websiteLink: string;
+  repositoryLink: string;
 }
 
 interface Author extends Base {
