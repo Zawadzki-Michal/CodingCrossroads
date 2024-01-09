@@ -44,10 +44,13 @@ export default function DropDown() {
         }`}
       ></span>
       {isOpen && (
-        <div className=" top-full left-0 mt-2 w-full bg-transparent rounded-lg shadow-lg">
+        <div className="lg:absolute top-full left-0 mt-2 w-full bg-transparent lg:bg-stone-300 rounded-lg shadow-lg">
           <ul className="flex flex-col items-center justify-center w-full">
             {list.map((item) => (
-              <li key={item.id} className="py-4 text-gray-100">
+              <li
+                key={item.id}
+                className="py-4 text-gray-100 lg:text-gray-700 lg:text-xl lg:uppercase lg:font-bold"
+              >
                 <Link href={item.href} onClick={toggleDropdown}>
                   {item.title}
                 </Link>
