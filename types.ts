@@ -71,3 +71,10 @@ export interface Comment {
   comment: string;
   _createdAt: string;
 }
+
+export interface ContactFormProps {
+  _id: string;
+  name: string;
+  email: string;
+  message: string;
+}
