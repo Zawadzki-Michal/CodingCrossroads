@@ -11,6 +11,7 @@ const projectsData: Project[] = [
     title: "Coding Crossroads",
     route: "/projects/coding-crossroads",
     description: "Your project description here...",
+    technology: "React, TypeScript, React Router, React Context, React Hooks, Styled Components, Framer Motion, React Icons, React Toastify, React Helmet, React Syntax Highlighter, Markdown, Netlify",
     imageSrc: blogImg,
     projectImages: [
       { image: buildImg, description: "Description for picture 1" },
@@ -27,6 +28,7 @@ const projectsData: Project[] = [
     title: "Portfolio Website",
     route: "/projects/portfolio",
     description: "Your project description here...",
+    technology: "React, TypeScript, React Router, React Context",
     imageSrc: portfolioImg,
     projectImages: [
       { image: buildImg, description: "Description for picture 1" },
@@ -43,6 +45,7 @@ const projectsData: Project[] = [
     title: "Team Build App",
     route: "/projects/build",
     description: "Your project description here...",
+    technology: "React, TypeScript, React Router, React Context",
     imageSrc: buildImg,
     projectImages: [
       { image: buildImg, description: "Description for picture 1" },
@@ -59,6 +62,7 @@ const projectsData: Project[] = [
     title: "School of Code Stash",
     route: "/projects/stash",
     description: "Your project description here...",
+    technology: "React, TypeScript, React Router, React Context",
     imageSrc: socksImg,
     projectImages: [
       { image: buildImg, description: "Description for picture 1" },

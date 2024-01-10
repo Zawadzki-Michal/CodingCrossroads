@@ -24,7 +24,7 @@ const Carousel = ({
 
   return (
     <div className="relative">
-      <div className=" mx-auto md:w-10/12 h-[300px] md:h-[400px] rounded-md overflow-hidden relative">
+      <div className=" mx-auto md:w-10/12 h-[300px] md:h-[400px] md:rounded-md overflow-hidden relative md:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]">
         <div
           ref={carouselRef}
           style={{

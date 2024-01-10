@@ -24,6 +24,7 @@ export interface Project {
   title: string;
   route: string;
   description: string;
+  technology: string;
   imageSrc: StaticImageData;
   projectImages: { 
     image: any;
