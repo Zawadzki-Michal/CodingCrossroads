@@ -24,7 +24,7 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 p-10 bg-gray-200">
+    <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 lg:p-10 bg-gray-200">
       <div>
         <h1 className="text-5xl font-extrabold text-center pb-6">
           Image Gallery
