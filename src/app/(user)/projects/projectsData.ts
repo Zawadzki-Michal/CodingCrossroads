@@ -32,6 +32,12 @@ import build17 from "@/images/build/build17.png"
 import build18 from "@/images/build/build18.png"
 import build19 from "@/images/build/build19.png"
 import build20 from "@/images/build/build20.png"
+import portfolio1 from "@/images/portfolio/portfolio1.png"
+import portfolio2 from "@/images/portfolio/portfolio2.png"
+import portfolio3 from "@/images/portfolio/portfolio3.png"
+import portfolio4 from "@/images/portfolio/portfolio4.png"
+import portfolio5 from "@/images/portfolio/portfolio5.png"
+import portfolio6 from "@/images/portfolio/portfolio6.png"
 
 
 const projectsData: Project[] = [
@@ -61,25 +67,27 @@ const projectsData: Project[] = [
 
     title: "Portfolio Website",
     route: "/projects/portfolio",
-    description: "Your project description here...",
-    technology: "React, TypeScript, React Router, React Context",
+    description: "My portfolio website, crafted during my evenings alongside my full-time course, showcases my journey into web design. It represents one of my earliest React and Next.js 14 projects, and I thoroughly enjoyed the learning process. However, I later integrated it into my coding-crossroads blog website to streamline my online presence. Tech stack: React, Next.js 14, TailwindCSS.",
+    technology: "React, NextJS14, TailwindCSS",
     imageSrc: portfolioImg,
     projectImages: [
-      { image: buildImg, description: "Description for picture 1" },
-      { image: socksImg, description: "Description for picture 1" },
-      { image: portfolioImg, description: "Description for picture 1" },
-      { image: blogImg, description: "Description for picture 1" },
+      { image: portfolio1, description: "Landing Page" },
+      { image: portfolio2, description: "My Projects Section" },
+      { image: portfolio3, description: "About Me" },
+      { image: portfolio4, description: "My Projects Mobile" },
+      { image: portfolio5, description: "Burger Menu" },
+      { image: portfolio6, description: "Mobile Landing Page" },
     ],
     websiteLink: "https://portfolio-sage-two-22.vercel.app/",
     repositoryLink: "https://github.com/Zawadzki-Michal/Portfolio",
-    longDescription: "This is my portfolio website. It is built with React and TypeScript. It uses React Router for routing and React Context for state management. The website is fully responsive and has a dark mode option. It is hosted on Vercel.",
+    longDescription: "My portfolio website is a testament to my dedication and continuous learning outside of my full-time course. It was born during my late evenings as I delved into the realm of web design. This project marked my initial foray into website creation and was among my earliest experiences with React and Next.js 14. The process of building this portfolio was a journey of discovery and growth. I relished the challenges and enjoyed learning new skills along the way. It was a valuable opportunity to apply my knowledge in a practical context and witness my progress firsthand. However, as my journey continued, I made the strategic decision to integrate my portfolio into my coding-crossroads blog website. This consolidation allowed me to maintain a cohesive online presence under a single domain while also enhancing the functionality and content available to visitors. In terms of technology, my portfolio website is built using React, Next.js 14, and TailwindCSS, reflecting my commitment to using modern tools and frameworks to create responsive and visually appealing web experiences. In summary, my portfolio website is a significant step in my web development journey, representing my early experiences with React and Next.js 14. While it served as a valuable learning opportunity, I chose to integrate it into my coding-crossroads blog website to streamline my online presence. It reflects my commitment to staying up-to-date with the latest web technologies and delivering user-friendly, visually pleasing websites.",
   },
   {
   
     title: "Team Build App",
     route: "/projects/build",
     description: "Team Build, my final School of Code project, connects charities with junior developers for a win-win. This idea, born from my passion, is now set to become a unique platform in the UK tech market. Collaboratively created using agile methods and featuring TailwindCSS and Supabase, it's a testament to my journey.",
-    technology: "React, TypeScript, React Router, React Context",
+    technology: "React, NextJS14, TailwindCSS, Supabase, Figma, MySQL",
     imageSrc: buildImg,
     projectImages: [
       { image: build1, description: "Landing Page" },
