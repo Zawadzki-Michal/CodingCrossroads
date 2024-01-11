@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { BsGithub, BsWordpress } from "react-icons/bs";
 import projectsData from "./projectsData";
+import WebsiteLink from "@/components/WebsiteLink";
+import GitHubLink from "@/components/GithubLink";
 
 const Projects: React.FC = () => {
   return (
@@ -35,20 +37,9 @@ const Projects: React.FC = () => {
 
             {/* // Links to project website and repository */}
             <div className="flex flex-row justify-evenly ">
-              <Link href={project.websiteLink} target="blank">
-                <span className="flex flex-row items-center gap-2 hover:text-green-600 duration-300 hover:scale-105 duration-400 hover:shadow-md">
-                  <BsWordpress className="text-2xl md:text-2xl " />
-                  <p className="text-lg uppercase font-semibold">Website</p>
-                </span>
-              </Link>
-              <Link href={project.repositoryLink} target="blank">
-                <span className="flex flex-row items-center gap-2 hover:text-blue-400 duration-300 hover:scale-105 duration-400 hover:shadow-md">
-                  <BsGithub className="text-2xl md:text-2xl " />
-                  <p className="text-lg uppercase font-semibold">Repository</p>
-                </span>
-              </Link>
+              <WebsiteLink websiteLink={project.websiteLink} />
+              <GitHubLink repositoryLink={project.repositoryLink} />
             </div>
-
             {/* // Horizontal divider */}
             <div className="border-t-2 border-gray-700 w-11/12 mx-auto mt-3"></div>
 
