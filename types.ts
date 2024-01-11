@@ -20,20 +20,40 @@ export interface Post extends Base {
 }
 
 export interface Project {
+
   title: string;
   route: string;
   description: string;
+  technology: string;
   imageSrc: StaticImageData;
+  projectImages: { 
+    image: any;
+    description: string;
+  }[];
   websiteLink: string;
   repositoryLink: string;
+  longDescription: string;
+
+  
+}
+
+interface CarouselProps {
+  data: {
+    image: string;
+  }[];
+  currentImg: number; // Define currentImg prop with the correct type
+  goToPreviousImage: () => void;
+  goToNextImage: () => void;
 }
 
 interface Author extends Base {
   name: string;
-  image: Image;
+  image: string;
   description: string;
   slug: Slug;
 }
+
+
 
 interface Image {
   _type: "image";
