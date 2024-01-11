@@ -6,28 +6,45 @@ import { Project } from "../../../../../types";
 import Carousel from "@/components/Carusel";
 import WebsiteLink from "@/components/WebsiteLink";
 import GitHubLink from "@/components/GithubLink";
+import ProjectNavigationButtons from "@/components/ProjectNavigationButtons";
 
 export default function ProjectDetail() {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-
   const [project, setProject] = useState<Project | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    const project = projectsData.find(
+    const projectIndex = projectsData.findIndex(
       (project) => project.route === pathname
-    ) as Project;
-    setProject(project);
+    );
+    setCurrentIndex(projectIndex);
+    if (projectIndex !== -1) {
+      setProject(projectsData[projectIndex]);
+    }
   }, [pathname]);
 
-  if (!project) {
+  const navigateToProject = (index: number) => {
+    if (index >= 0 && index < projectsData.length) {
+      router.push(projectsData[index].route);
+    }
+  };
+
+  if (currentIndex === null || !project) {
     return <div>Project not found</div>;
   }
 
   return (
-    <div className="md:min-h-[calc(100vh-156px)] grid lg:grid-cols-2 lg:gap-10 gap-4 lg:pt-5 bg-gray-100 lg:px-[120px]">
-      <div className="bg-gray-100 flex flex-col gap-2 px-2 text-gray-700 order-2">
+    <div className="grid md:grid-cols-2 lg:gap-10 gap-4 lg:pt-5 bg-gray-100 lg:px-[120px]">
+      <div className="md:col-span-2 flex justify-between px-2 pt-2">
+        <ProjectNavigationButtons
+          currentIndex={currentIndex}
+          totalProjects={projectsData.length}
+          onNavigate={navigateToProject}
+          // Pass any other necessary props
+        />
+      </div>
+      <div className="bg-gray-100 flex flex-col gap-2 px-2 text-gray-700 order-3 md:order-2">
         <div>
           <h1 className="hidden md:block text-2xl md:py-10 font-semibold">
             Project Details
@@ -43,7 +60,7 @@ export default function ProjectDetail() {
         </h2>
         <h2 className="text-xl pb-4">{project.longDescription}</h2>
       </div>
-      <div className="md:pb-10 pt-1 md:order-2 order-1">
+      <div className="md:pb-10 pt-1 order-2 md:order-3">
         <h1 className="hidden md:block md:text-2xl md:py-10 py-5 px-2 font-semibold text-gray-700">
           Image Gallery
         </h1>
