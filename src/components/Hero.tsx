@@ -10,6 +10,8 @@ const Hero = () => {
         src={roads}
         height={0}
         width={0}
+        priority
+        placeholder="blur"
         alt="lorry"
         className="lg:w-full lg:max-h-[calc(100vh-80px)] lg:object-fill h-[calc(100vh-80px)] object-cover"
       />
