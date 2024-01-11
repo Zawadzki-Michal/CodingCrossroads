@@ -40,7 +40,7 @@ const Carousel = ({
                 fill
                 src={v.image}
               />
-              <div className="absolute bottom-10 left-0 w-full bg-pink-500 bg-opacity-50 p-2 text-2xl text-white">
+              <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-2 text-md uppercase text-center text-white">
                 {v.description}
               </div>
             </div>

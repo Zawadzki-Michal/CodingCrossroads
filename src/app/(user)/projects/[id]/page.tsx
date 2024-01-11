@@ -41,7 +41,7 @@ export default function ProjectDetail() {
         <h2 className="text-xl font-semibold md:py-4">
           Technologies used: {project.technology}
         </h2>
-        <h2 className="text-xl pb-5">{project.longDescription}</h2>
+        <h2 className="text-xl pb-4">{project.longDescription}</h2>
       </div>
       <div className="md:pb-10 pt-1 md:order-2 order-1">
         <h1 className="hidden md:block md:text-2xl md:py-10 py-5 px-2 font-semibold text-gray-700">

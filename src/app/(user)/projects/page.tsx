@@ -3,8 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { BsGithub, BsWordpress } from "react-icons/bs";
 import projectsData from "./projectsData";
-import WebsiteLink from "@/components/WebsiteLink";
-import GitHubLink from "@/components/GithubLink";
 
 const Projects: React.FC = () => {
   return (
@@ -37,8 +35,18 @@ const Projects: React.FC = () => {
 
             {/* // Links to project website and repository */}
             <div className="flex flex-row justify-evenly ">
-              <WebsiteLink websiteLink={project.websiteLink} />
-              <GitHubLink repositoryLink={project.repositoryLink} />
+              <Link href={project.websiteLink} target="blank">
+                <span className="flex flex-row items-center gap-2 hover:text-green-600 duration-300 hover:scale-105 duration-400 hover:shadow-md">
+                  <BsWordpress className="text-2xl md:text-2xl " />
+                  <p className="text-lg uppercase font-semibold">Website</p>
+                </span>
+              </Link>
+              <Link href={project.repositoryLink} target="blank">
+                <span className="flex flex-row items-center gap-2 hover:text-blue-400 duration-300 hover:scale-105 duration-400 hover:shadow-md">
+                  <BsGithub className="text-2xl md:text-2xl " />
+                  <p className="text-lg uppercase font-semibold">Repository</p>
+                </span>
+              </Link>
             </div>
 
             {/* // Horizontal divider */}
@@ -49,7 +57,7 @@ const Projects: React.FC = () => {
 
             {/* // Button to show more details about the project */}
             <Link href={project.route} passHref>
-              <div className="flex w-full justify-center">
+              <div className="flex w-full justify-center pb-6">
                 <button className="items-center border-2 border-gray-700 text-gray-700 font-semibold py-1.5 px-5 rounded-xl">
                   Show Details
                 </button>
