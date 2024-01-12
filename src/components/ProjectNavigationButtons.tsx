@@ -28,22 +28,22 @@ const ProjectNavigationButtons: React.FC<Props> = ({
   };
 
   return (
-    <div className="flex w-full justify-between px-2 py-4">
+    <div className="flex w-full md:justify-center md:gap-5 justify-between gap-4 pt-2">
       <button
-        className="border px-4 py-2 rounded text-gray-700 hover:bg-gray-200"
+        className=" text-gray-700 border-gray-700  border-2 font-bold py-2 px-4 rounded"
         onClick={() => onNavigate(currentIndex - 1)}
         disabled={currentIndex <= 0}
       >
         {"<"}
       </button>
       <button
-        className="border px-6 py-2 mx-2 rounded text-gray-700 hover:bg-gray-200"
+        className="  lg:bottom-20 bottom-2 bg-transparent text-gray-700 border-gray-700  border-2 font-bold py-2 px-4 rounded"
         onClick={navigateToProjectList}
       >
         Project List
       </button>
       <button
-        className="border px-4 py-2 rounded text-gray-700 hover:bg-gray-200"
+        className=" text-gray-700 border-gray-700  border-2 font-bold py-2 px-4 rounded"
         onClick={() => onNavigate(currentIndex + 1)}
         disabled={currentIndex >= totalProjects - 1}
       >
