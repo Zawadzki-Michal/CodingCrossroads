@@ -24,7 +24,7 @@ const Carousel = ({
 
   return (
     <div className="relative">
-      <div className=" mx-auto md:w-10/12 h-[300px] md:h-[400px] md:rounded-md overflow-hidden relative md:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]">
+      <div className=" mx-auto md:w-10/12 h-[250px] md:h-[400px] md:rounded-md overflow-hidden relative md:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]">
         <div
           ref={carouselRef}
           style={{
@@ -40,7 +40,7 @@ const Carousel = ({
                 fill
                 src={v.image}
               />
-              <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-2 text-md uppercase text-center text-white">
+              <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-1 text-md uppercase text-center text-white">
                 {v.description}
               </div>
             </div>
