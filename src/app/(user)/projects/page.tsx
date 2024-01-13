@@ -9,7 +9,7 @@ import GitHubLink from "@/components/GithubLink";
 const Projects: React.FC = () => {
   return (
     // Main container for the Projects section
-    <div className="lg:min-h-[calc(100vh-155px)] text-gray-700 bg-black/80">
+    <div className="lg:min-h-[calc(100vh-155px)] lg::px-10 text-gray-700 bg-black/80">
       {/* // Grid layout to display project cards */}
       <div className="lg:py-20 py-5 px-4 lg:px-24 grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-20 min-h-[800px]">
         {/* // Map through each project in the projectsData array */}

@@ -28,7 +28,7 @@ const SocialShare: React.FC<SocialShareProps> = ({ shareUrl, title }) => {
       name: "Twitter",
       Component: TwitterShareButton,
       Icon: TwitterIcon,
-      extraProps: { title }, // Extra props for Twitter (e.g., title for the shared content)
+      extraProps: { title }, // Extra props for Twitter (title for the shared content)
     },
     { name: "LinkedIn", Component: LinkedinShareButton, Icon: LinkedinIcon },
     { name: "Whatsapp", Component: WhatsappShareButton, Icon: WhatsappIcon },
@@ -57,5 +57,4 @@ const SocialShare: React.FC<SocialShareProps> = ({ shareUrl, title }) => {
   );
 };
 
-// Export the SocialShare component
 export default SocialShare;
