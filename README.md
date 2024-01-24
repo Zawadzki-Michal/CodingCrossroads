@@ -75,3 +75,5 @@ This project is licensed under the [MIT License](LICENSE).
 If you have any questions or suggestions, please feel free to contact Michal Zawadzki at [m.z.zawadzkimichal@gmail.com].
 
 ---
+
+-- Testing implementation: 24/01/2024
